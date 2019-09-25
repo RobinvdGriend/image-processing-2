@@ -20,5 +20,18 @@ namespace INFOIBV
             }
             return r;
         }
+
+        public static int GetBinaryValue(this Color color)
+        {
+            var greyscale = GetGreyscaleValue(color);
+            if (greyscale == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return 255;
+            }
+        }
     }
 }
