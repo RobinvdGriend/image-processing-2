@@ -13,8 +13,8 @@ namespace INFOIBV.Class
         {
             // We assume that the hotspot of the structuring element is in
             // the middle.
-            var hotspotX = (int)(structure.Size + 0.5) / 2;
-            var hotspotY = (int)(structure.Size + 0.5) / 2;
+            var hotspotX = (int)(structure.Size) / 2;
+            var hotspotY = (int)(structure.Size) / 2;
             var buffer = (int[,])Image.Clone();
             
             for (int x = 0; x < Width; x++)
@@ -29,7 +29,13 @@ namespace INFOIBV.Class
                         {
                             if (structure[u,v] > 0)
                             {
-                                structuredSums.Add(this[x - hotspotX + u, y - hotspotY + v] + structure[u, v]);
+                                var p = x + u - hotspotX;
+                                var q = y + v - hotspotY;
+
+                                if (p >= 0 & q >= 0 & p < Width & q < Height)
+                                {
+                                    structuredSums.Add(Image[p, q] + structure[u, v]);
+                                }
                             }
                         }
                     }
@@ -45,7 +51,7 @@ namespace INFOIBV.Class
                         structuredMax = 255;
                     }
                     
-                    buffer[x, y] = structuredSums.Max();
+                    buffer[x, y] = structuredMax;
                 }
             }
             Image = buffer;

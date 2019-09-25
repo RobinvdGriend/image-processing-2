@@ -81,7 +81,7 @@ namespace INFOIBV.Struct
             {
                 for (int x = 0; x < size; x++)
                 {
-                    Kernel[x, y] = 255;
+                    Kernel[x, y] = 1;
                 }
             }
         }
@@ -90,8 +90,8 @@ namespace INFOIBV.Struct
         {
             for (int i = 0; i < size; i++)
             {
-                Kernel[(int)(size + 0.5) / 2, i] = 255;
-                Kernel[i, (int)(size + 0.5) / 2] = 255;
+                Kernel[(int)(size + 0.5) / 2, i] = 1;
+                Kernel[i, (int)(size + 0.5) / 2] = 1;
             }
         }
     }

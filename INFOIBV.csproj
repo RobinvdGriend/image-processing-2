@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="Class\ImageProcessor.cs" />
     <Compile Include="Class\IImageOperation.cs" />
+    <Compile Include="ImageOperations\Dilate.cs" />
     <Compile Include="ImageOperations\Complement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

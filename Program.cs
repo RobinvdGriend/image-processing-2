@@ -18,6 +18,7 @@ namespace INFOIBV
             var ops = new IImageOperation[]
             {
                 new Complement(),
+                new Dilate(),
             };
 
             Application.EnableVisualStyles();
