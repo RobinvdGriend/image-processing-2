@@ -1,4 +1,6 @@
-﻿using System;
+﻿using INFOIBV.Class;
+using INFOIBV.ImageOperations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -13,9 +15,14 @@ namespace INFOIBV
         [STAThread]
         static void Main()
         {
+            var ops = new IImageOperation[]
+            {
+                new Negative()
+            };
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new INFOIBV());
+            Application.Run(new INFOIBV(ops));
         }
     }
 }
