@@ -55,6 +55,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\ImageProcessor.cs" />
+    <Compile Include="Class\IImageOperation.cs" />
+    <Compile Include="ImageOperations\Negative.cs" />
+    <Compile Include="Class\ImageProcessor.Negative.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Struct\StructuringElement.cs" />

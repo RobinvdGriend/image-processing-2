@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.chooseProcessor = new System.Windows.Forms.ComboBox();
             this.LoadImageButton = new System.Windows.Forms.Button();
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.imageFileName = new System.Windows.Forms.TextBox();
@@ -40,6 +41,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
+            //
+            // chooseProcessor
+            //
+            this.chooseProcessor.Location = new System.Drawing.Point(616, 14);
+            this.chooseProcessor.Name = "chooseProcessor";
+            this.chooseProcessor.Size = new System.Drawing.Size(316, 20);
+            this.chooseProcessor.TabIndex = 4;
+            this.chooseProcessor.Visible = true;
             // 
             // LoadImageButton
             // 
@@ -122,6 +131,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1052, 576);
+            this.Controls.Add(this.chooseProcessor);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.saveButton);
@@ -142,6 +152,7 @@
 
         #endregion
 
+        private System.Windows.Forms.ComboBox chooseProcessor;
         private System.Windows.Forms.Button LoadImageButton;
         private System.Windows.Forms.OpenFileDialog openImageDialog;
         private System.Windows.Forms.TextBox imageFileName;
