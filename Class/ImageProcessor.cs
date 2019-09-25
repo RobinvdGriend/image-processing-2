@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using INFOIBV.Struct;
 
 namespace INFOIBV.Class
 {
@@ -41,6 +42,24 @@ namespace INFOIBV.Class
 
         public ImageProcessor()
         {
+        }
+
+        public void Invert()
+        {
+            for (int x = 0; x < Width; x++)
+            {
+                for (int y = 0; y < Height; y++)
+                {
+                    Image[x, y] = -Image[x, y];
+                }
+            }
+        }
+
+        public void Dilate(StructuringElement structure)
+        {
+            var buffer = (int[,])Image.Clone();
+
+            Image = buffer;
         }
     }
 }
