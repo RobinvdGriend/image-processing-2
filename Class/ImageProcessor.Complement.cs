@@ -8,7 +8,7 @@ namespace INFOIBV.Class
 {
     partial class ImageProcessor
     {
-        public void Negative() {
+        public void Complement() {
             for (int x = 0; x < Width; x++)
             {
                 for (int y = 0; y < Height; y++)

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace INFOIBV.ImageOperations
 {
-    class Negative : IImageOperation
+    class Complement : IImageOperation
     {
         public Bitmap Process(Bitmap input, ProgressBar progressBar)
         {
@@ -19,9 +19,13 @@ namespace INFOIBV.ImageOperations
             progressBar.Step = 1;
             var proc = new ImageProcessor(input);
             progressBar.PerformStep();
-            proc.Negative();
-
+            proc.Complement();
             progressBar.PerformStep();
+            proc.Complement();
+            progressBar.PerformStep();
+            proc.Complement();
+            progressBar.PerformStep();
+
             var bmp = proc.GetBitmap();
 
             progressBar.PerformStep();
@@ -31,7 +35,7 @@ namespace INFOIBV.ImageOperations
 
         public override string ToString()
         {
-            return "Negative";
+            return "Complement";
         }
     }
 

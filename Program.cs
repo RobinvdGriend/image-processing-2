@@ -17,7 +17,7 @@ namespace INFOIBV
         {
             var ops = new IImageOperation[]
             {
-                new Negative()
+                new Complement(),
             };
 
             Application.EnableVisualStyles();
