@@ -57,5 +57,17 @@ namespace INFOIBV.Class
             this.Dilate(structure.Reflection);
             this.Complement();
         }
+
+        public void Open(StructuringElement structure)
+        {
+            this.Erode(structure);
+            this.Dilate(structure);
+        }
+
+        public void Close(StructuringElement structure)
+        {
+            this.Dilate(structure);
+            this.Erode(structure);
+        }
     }
 }
