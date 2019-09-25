@@ -16,7 +16,7 @@ namespace INFOIBV.Class
 
         public int Width;
         public int Height;
-        int[,] Image;
+        protected int[,] Image;
 
         public ImageProcessor(Bitmap bitmap)
         {
@@ -30,6 +30,17 @@ namespace INFOIBV.Class
                     Image[x,y] = bitmap.GetPixel(x, y).GetGreyscaleValue();
                 }
             }
+        }
+        
+        public ImageProcessor(int width, int height)
+        {
+            Width = width;
+            Height = height;
+            Image = new int[Width, Height];
+        }
+
+        public ImageProcessor()
+        {
         }
     }
 }
