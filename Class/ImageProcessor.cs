@@ -54,6 +54,14 @@ namespace INFOIBV.Class
         public ImageProcessor()
         {
         }
+
+        public int this[int x, int y]
+        {
+            get
+            {
+                return Image[x, y];
+            }
+        }
         public Bitmap GetBitmap()
         {
             var b = new Bitmap(Width, Height);
@@ -66,25 +74,6 @@ namespace INFOIBV.Class
             }
             return b;
         }
-        public void Invert()
-        {
-            for (int x = 0; x < Width; x++)
-            {
-                for (int y = 0; y < Height; y++)
-                {
-                    Image[x, y] = -Image[x, y];
-                }
-            }
-        }
-
-        public void Dilate(StructuringElement structure)
-        {
-            var buffer = (int[,])Image.Clone();
-
-            Image = buffer;
-
-        }
-
 
         public object Clone()
         {

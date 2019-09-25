@@ -14,6 +14,8 @@ namespace INFOIBV.Struct
     struct StructuringElement
     {
         public int[,] Kernel;
+        public int Size;
+
         public StructuringElement(StructuringElementShape shape, int size)
         {
             if (size % 2 != 1)
@@ -22,6 +24,7 @@ namespace INFOIBV.Struct
             }
 
             Kernel = new int[size, size];
+            Size = size;
 
             switch (shape)
             {
@@ -33,6 +36,42 @@ namespace INFOIBV.Struct
                     break;
                 default:
                     throw new ArgumentException("Not a valid shape");
+            }
+        }
+
+        public StructuringElement(int size)
+        {
+            Size = size;
+            Kernel = new int[size, size];
+        }
+
+        public int this[int x, int y]
+        {
+            get
+            {
+                return Kernel[x, y];
+            }
+
+            private set
+            {
+                Kernel[x, y] = value;
+            }
+        }
+
+        public StructuringElement Reflection
+        {
+            get
+            {
+                var output = new StructuringElement(Size);
+                 
+                for (int x = 0; x < Size; x++)
+                {
+                    for (int y = 0; y < Size; y++)
+                    {
+                        output[x, y] = this[Size - x, Size - y];
+                    }
+                }
+                return output;
             }
         }
 
