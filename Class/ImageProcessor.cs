@@ -18,6 +18,9 @@ namespace INFOIBV.Class
         public int Width;
         public int Height;
         protected int[,] Image { get; private set; }         // x,y
+        public Histogram CalculateHistogram() {
+            return new Histogram(Image);
+        }
 
         public ImageProcessor(Bitmap bitmap)
         {
