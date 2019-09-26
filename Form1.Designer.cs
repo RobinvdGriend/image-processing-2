@@ -33,6 +33,8 @@
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.imageFileName = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.histogram1= new System.Windows.Forms.PictureBox();
+            this.histogram2= new System.Windows.Forms.PictureBox();
             this.applyButton = new System.Windows.Forms.Button();
             this.saveImageDialog = new System.Windows.Forms.SaveFileDialog();
             this.saveButton = new System.Windows.Forms.Button();
@@ -40,6 +42,8 @@
             this.progressBar = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.histogram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.histogram2)).BeginInit();
             this.SuspendLayout();
             //
             // chooseProcessor
@@ -83,6 +87,13 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // histogram1
+            // 
+            this.histogram1.Location = new System.Drawing.Point(13, 577);
+            this.histogram1.Name = "histogram1";
+            this.histogram1.Size = new System.Drawing.Size(512, 100);
+            this.histogram1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            // 
             // applyButton
             // 
             this.applyButton.Location = new System.Drawing.Point(478, 12);
@@ -117,11 +128,18 @@
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
+            // histogram2
+            // 
+            this.histogram2.Location = new System.Drawing.Point(531, 577);
+            this.histogram2.Name = "histogram2";
+            this.histogram2.Size = new System.Drawing.Size(512, 100);
+            this.histogram2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(587, 14);
+            this.progressBar.Location = new System.Drawing.Point(616, 14);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(276, 20);
+            this.progressBar.Size = new System.Drawing.Size(316, 20);
             this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar.TabIndex = 6;
             this.progressBar.Visible = false;
@@ -130,21 +148,26 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1052, 576);
+            this.ClientSize = new System.Drawing.Size(1052, 676);
             this.Controls.Add(this.chooseProcessor);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.histogram1);
+            this.Controls.Add(this.histogram2);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.applyButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.imageFileName);
             this.Controls.Add(this.LoadImageButton);
+            this.Controls.SetChildIndex(this.progressBar, 0);
             this.Location = new System.Drawing.Point(10, 10);
             this.Name = "INFOIBV";
             this.ShowIcon = false;
             this.Text = "INFOIBV";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.histogram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.histogram2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,10 +180,12 @@
         private System.Windows.Forms.OpenFileDialog openImageDialog;
         private System.Windows.Forms.TextBox imageFileName;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox histogram1;
         private System.Windows.Forms.Button applyButton;
         private System.Windows.Forms.SaveFileDialog saveImageDialog;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox histogram2;
         private System.Windows.Forms.ProgressBar progressBar;
 
     }

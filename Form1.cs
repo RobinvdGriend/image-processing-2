@@ -27,11 +27,16 @@ namespace INFOIBV
                 imageFileName.Text = file;                                  // Show file name
                 if (InputImage != null) InputImage.Dispose();               // Reset image
                 InputImage = new Bitmap(file);                              // Create new Bitmap from file
+
                 if (InputImage.Size.Height <= 0 || InputImage.Size.Width <= 0 ||
                     InputImage.Size.Height > 512 || InputImage.Size.Width > 512) // Dimension check
                     MessageBox.Show("Error in image dimensions (have to be > 0 and <= 512)");
-                else
+                else {
+                    var h = new Histogram(InputImage);
                     pictureBox1.Image = (Image)InputImage;                 // Display input image
+                    histogram1.Image = (Image)h.RenderHistogram(2);
+                }
+
             }
         }
 
@@ -44,7 +49,9 @@ namespace INFOIBV
             var op = (IImageOperation)chooseProcessor.SelectedItem;
             OutputImage = op.Process(InputImage, progressBar);
 
+            var h = new Histogram(OutputImage);
             pictureBox2.Image = (Image)OutputImage;                         // Display output image
+            histogram2.Image = (Image)h.RenderHistogram(2);
             progressBar.Visible = false;                                    // Hide progress bar
         }
 
