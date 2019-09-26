@@ -160,7 +160,7 @@
             this.Controls.Add(this.imageFileName);
             this.Controls.Add(this.LoadImageButton);
             this.Controls.SetChildIndex(this.progressBar, 0);
-            this.Location = new System.Drawing.Point(10, 10);
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "INFOIBV";
             this.ShowIcon = false;
             this.Text = "INFOIBV";
