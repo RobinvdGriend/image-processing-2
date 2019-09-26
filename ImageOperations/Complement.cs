@@ -14,9 +14,10 @@ namespace INFOIBV.ImageOperations
         {
             progressBar.Visible = true;
             progressBar.Minimum = 0;
-            progressBar.Maximum = 3;
+            progressBar.Maximum = 4;
             progressBar.Value = 0;
             progressBar.Step = 1;
+            progressBar.PerformStep();
             var proc = new ImageProcessor(input);
             progressBar.PerformStep();
             proc.Complement();

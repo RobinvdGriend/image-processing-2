@@ -18,6 +18,13 @@ namespace INFOIBV
             var ops = new IImageOperation[]
             {
                 new Complement(),
+                new Threshold(63),
+                new Threshold(127),
+                new Threshold(191),
+                new BandFilter(63,191),
+                new NotchFilter(63,191),
+                new BandFilter(181,201),
+                new NotchFilter(181,201),
             };
 
             Application.EnableVisualStyles();
