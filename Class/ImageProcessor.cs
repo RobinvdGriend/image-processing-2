@@ -42,20 +42,33 @@ namespace INFOIBV.Class
             Height = height;
             Image = new int[Width, Height];
         }
-        private void setPixel(int x, int y, int value) {
-            if (x < Width && x >= 0) {
-                if (x < Width && x >= 0) {
-                    if (value >= 0 && value < 256) {
-                        Image[x, y] = value;
-                        return;
-                    }                    
-                }
-            }
-            throw new Exception("Could not set pixel");
-        }
 
         public ImageProcessor()
         {
+
+        }
+
+        public int this[int x, int y]
+        {
+            get
+            {
+                return Image[x, y];
+            }
+            private set
+            {
+                if (x < 0 | y < 0 | x >= Width | y >= Width)
+                {
+                    throw new ArgumentException("Coordinate lies outside of the image.");
+                }
+                else if (value < 0 | value > 255)
+                {
+                    throw new ArgumentException("Pixel value is outside of possible values");
+                }
+                else
+                {
+                    Image[x, y] = value;
+                }
+            }
         }
         public Bitmap GetBitmap()
         {
@@ -69,25 +82,6 @@ namespace INFOIBV.Class
             }
             return b;
         }
-        public void Invert()
-        {
-            for (int x = 0; x < Width; x++)
-            {
-                for (int y = 0; y < Height; y++)
-                {
-                    Image[x, y] = -Image[x, y];
-                }
-            }
-        }
-
-        public void Dilate(StructuringElement structure)
-        {
-            var buffer = (int[,])Image.Clone();
-
-            Image = buffer;
-
-        }
-
 
         public object Clone()
         {

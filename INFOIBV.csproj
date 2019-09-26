@@ -50,6 +50,7 @@
     <Compile Include="Class\BinaryProcessor.cs" />
     <Compile Include="Class\Histogram.cs" />
     <Compile Include="Class\ImageProcessor.Threshold.cs" />
+    <Compile Include="Class\ImageProcessor.MorphologicalFilters.cs" />
     <Compile Include="Class\ImageProcessor.Complement.cs" />
     <Compile Include="Extension\ColorExtension.cs" />
     <Compile Include="Form1.cs">
@@ -61,6 +62,7 @@
     <Compile Include="Class\ImageProcessor.cs" />
     <Compile Include="Class\IImageOperation.cs" />
     <Compile Include="ImageOperations\BandFilter.cs" />
+    <Compile Include="ImageOperations\Dilate.cs" />
     <Compile Include="ImageOperations\Complement.cs" />
     <Compile Include="ImageOperations\NotchFilter.cs" />
     <Compile Include="ImageOperations\Threshold.cs" />

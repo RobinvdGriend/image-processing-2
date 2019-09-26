@@ -14,6 +14,8 @@ namespace INFOIBV.Struct
     struct StructuringElement
     {
         public int[,] Kernel;
+        public int Size;
+
         public StructuringElement(StructuringElementShape shape, int size)
         {
             if (size % 2 != 1)
@@ -22,6 +24,7 @@ namespace INFOIBV.Struct
             }
 
             Kernel = new int[size, size];
+            Size = size;
 
             switch (shape)
             {
@@ -36,13 +39,49 @@ namespace INFOIBV.Struct
             }
         }
 
+        public StructuringElement(int size)
+        {
+            Size = size;
+            Kernel = new int[size, size];
+        }
+
+        public int this[int x, int y]
+        {
+            get
+            {
+                return Kernel[x, y];
+            }
+
+            private set
+            {
+                Kernel[x, y] = value;
+            }
+        }
+
+        public StructuringElement Reflection
+        {
+            get
+            {
+                var output = new StructuringElement(Size);
+                 
+                for (int x = 0; x < Size; x++)
+                {
+                    for (int y = 0; y < Size; y++)
+                    {
+                        output[x, y] = this[Size - x, Size - y];
+                    }
+                }
+                return output;
+            }
+        }
+
         public void SetRectangle(int size)
         {
             for (int y = 0; y < size; y++)
             {
                 for (int x = 0; x < size; x++)
                 {
-                    Kernel[x, y] = 255;
+                    Kernel[x, y] = 1;
                 }
             }
         }
@@ -51,8 +90,8 @@ namespace INFOIBV.Struct
         {
             for (int i = 0; i < size; i++)
             {
-                Kernel[(int)(size + 0.5) / 2, i] = 255;
-                Kernel[i, (int)(size + 0.5) / 2] = 255;
+                Kernel[(int)(size + 0.5) / 2, i] = 1;
+                Kernel[i, (int)(size + 0.5) / 2] = 1;
             }
         }
     }

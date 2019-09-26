@@ -25,6 +25,7 @@ namespace INFOIBV
                 new NotchFilter(63,191),
                 new BandFilter(181,201),
                 new NotchFilter(181,201),
+                new Dilate(),
             };
 
             Application.EnableVisualStyles();
