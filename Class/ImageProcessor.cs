@@ -17,7 +17,7 @@ namespace INFOIBV.Class
 
         public int Width;
         public int Height;
-        protected int[,] Image { get; private set; }         // x,y
+        protected int[,] Image { get; set; }         // x,y
         public Histogram CalculateHistogram() {
             return new Histogram(Image);
         }
@@ -83,7 +83,7 @@ namespace INFOIBV.Class
             return b;
         }
 
-        public object Clone()
+        public virtual object Clone()
         {
             var clone = new ImageProcessor(this.Width, this.Height);
             clone.Image = (int[,])this.Image.Clone();

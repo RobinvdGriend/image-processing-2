@@ -14,11 +14,8 @@ namespace INFOIBV.Class
         // Calling BinaryProcessor(Bitmap) will convert any greyscale image to
         // binary, but will only make sense if the only 2 pixel values are 0 and 255.
         public BinaryProcessor(int width, int height) : base(width, height) { }
-        public BinaryProcessor(Bitmap bitmap)
+        public BinaryProcessor(Bitmap bitmap) : base(bitmap.Width,bitmap.Height)
         {
-            Width = bitmap.Size.Width;
-            Height = bitmap.Size.Height;
-
             for (int x = 0; x < Width; x++)
             {
                 for (int y = 0; y < Height; y++)
@@ -26,6 +23,12 @@ namespace INFOIBV.Class
                     Image[x, y] = bitmap.GetPixel(x, y).GetBinaryValue();
                 }
             }
+        }
+        public override object Clone()
+        {
+            var res = new BinaryProcessor(Width, Height);
+            res.Image = (int[,])this.Image.Clone();
+            return res;
         }
     }
 }
