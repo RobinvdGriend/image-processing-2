@@ -6,12 +6,12 @@ using System.Drawing;
 
 namespace INFOIBV.Struct
 {
-    enum StructuringElementShape
+    public enum StructuringElementShape
     {
         Cross,
         Rectangle
     }
-    struct StructuringElement
+    public struct StructuringElement
     {
         public int[,] Kernel;
         public int Size;
