@@ -13,6 +13,7 @@ namespace INFOIBV.Class
         // images. A binary image is an image that only holds values 0 and 255.
         // Calling BinaryProcessor(Bitmap) will convert any greyscale image to
         // binary, but will only make sense if the only 2 pixel values are 0 and 255.
+        public BinaryProcessor(int width, int height) : base(width, height) { }
         public BinaryProcessor(Bitmap bitmap)
         {
             Width = bitmap.Size.Width;
