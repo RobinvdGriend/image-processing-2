@@ -1,4 +1,5 @@
 ﻿using INFOIBV.Class;
+using INFOIBV.Struct;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -6,31 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using INFOIBV.Struct;
-
 namespace INFOIBV.ImageOperations
 {
-    class Dilate : IImageOperation
+    class OpenClose : IImageOperation
     {
-        StructuringElement structure;
-        public Dilate(StructuringElement s ) {
+        StructuringElement structure; 
+        public OpenClose(StructuringElement s) {
             structure = s;
         }
-
         public Bitmap Process(Bitmap input, ProgressBar progressBar)
         {
-            progressBar.Visible = false;
-            
-            var proc = new ImageProcessor(input);
-            proc.Dilate(structure);
-
-            return proc.GetBitmap();
+            var p = new ImageProcessor(input);
+            p.Open(structure);
+            p.Close(structure);
+            return p.GetBitmap();
         }
-
         public override string ToString()
         {
-            return $"Dilate {structure.ToString()}";
+            return $"OpenClose {structure.ToString()}";
         }
     }
-
 }

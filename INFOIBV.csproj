@@ -46,7 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\BinaryProcessor.AndOr.cs" />
     <Compile Include="Class\BinaryProcessor.cs" />
+    <Compile Include="Class\BinaryProcessor.MorphologicalFilters.cs" />
+    <Compile Include="Class\Filter.cs" />
+    <Compile Include="Class\Histogram.cs" />
+    <Compile Include="Class\ImageProcessor.MaskLayer.cs" />
+    <Compile Include="Class\ImageProcessor.Threshold.cs" />
     <Compile Include="Class\ImageProcessor.MorphologicalFilters.cs" />
     <Compile Include="Class\ImageProcessor.Complement.cs" />
     <Compile Include="Extension\ColorExtension.cs" />
@@ -61,8 +67,15 @@
     <Compile Include="ImageOperations\Close.cs" />
     <Compile Include="ImageOperations\Open.cs" />
     <Compile Include="ImageOperations\Erode.cs" />
+    <Compile Include="ImageOperations\BandFilter.cs" />
+    <Compile Include="ImageOperations\CloseOpen.cs" />
+    <Compile Include="ImageOperations\Mask.cs" />
+    <Compile Include="ImageOperations\BoundaryTrace.cs" />
     <Compile Include="ImageOperations\Dilate.cs" />
     <Compile Include="ImageOperations\Complement.cs" />
+    <Compile Include="ImageOperations\NotchFilter.cs" />
+    <Compile Include="ImageOperations\OpenClose.cs" />
+    <Compile Include="ImageOperations\Threshold.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Struct\StructuringElement.cs" />

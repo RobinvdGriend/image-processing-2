@@ -15,12 +15,9 @@ namespace INFOIBV.Class
         // only 2 colors, one of which has pixel value 0. Calling GetBitmap
         // will actively convert all colors to 0 and 255 according to their
         // boolean value.
-
-        public BinaryProcessor(Bitmap bitmap)
+        public BinaryProcessor(int width, int height) : base(width, height) { }
+        public BinaryProcessor(Bitmap bitmap) : base(bitmap.Width,bitmap.Height)
         {
-            Width = bitmap.Size.Width;
-            Height = bitmap.Size.Height;
-
             for (int x = 0; x < Width; x++)
             {
                 for (int y = 0; y < Height; y++)
@@ -45,10 +42,17 @@ namespace INFOIBV.Class
                     {
                         b.SetPixel(x, y, Color.FromArgb(0, 0, 0));
                     }
-                    
+
                 }
             }
             return b;
+        }
+
+        public override object Clone()
+        {
+            var res = new BinaryProcessor(Width, Height);
+            res.Image = (int[,])this.Image.Clone();
+            return res;
         }
     }
 }

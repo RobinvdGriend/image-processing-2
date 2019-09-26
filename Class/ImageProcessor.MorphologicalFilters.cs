@@ -34,7 +34,7 @@ namespace INFOIBV.Class
 
                                 if (p >= 0 & q >= 0 & p < Width & q < Height)
                                 {
-                                    structuredSums.Add(Image[p, q] + structure[u, v]);
+                                    structuredSums.Add(processStructure(Image[p,q], structure[u,v]));
                                 }
                             }
                         }
@@ -56,7 +56,9 @@ namespace INFOIBV.Class
             }
             Image = buffer;
         }
-
+        protected virtual int processStructure(int iValue, int sValue) {
+            return iValue + sValue;
+        }
         public void Erode(StructuringElement structure)
         {
             this.Complement();
