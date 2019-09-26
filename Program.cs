@@ -16,6 +16,14 @@ namespace INFOIBV
         [STAThread]
         static void Main()
         {
+            var s_c_3 = new StructuringElement(StructuringElementShape.Cross, 3);
+            var s_r_3 = new StructuringElement(StructuringElementShape.Rectangle, 3);
+            var s_c_5 = new StructuringElement(StructuringElementShape.Cross, 5);
+            var s_r_5 = new StructuringElement(StructuringElementShape.Rectangle, 5);
+            var s_c_7 = new StructuringElement(StructuringElementShape.Cross, 7);
+            var s_r_7 = new StructuringElement(StructuringElementShape.Rectangle, 7);
+            var s_c_9 = new StructuringElement(StructuringElementShape.Cross, 9);
+            var s_r_9 = new StructuringElement(StructuringElementShape.Rectangle, 9);
             var ops = new IImageOperation[]
             {
                 new Complement(),
@@ -26,15 +34,32 @@ namespace INFOIBV
                 new NotchFilter(63,191),
                 new BandFilter(181,201),
                 new NotchFilter(181,201),
-                new Dilate(),
-                new BoundaryTrace(new StructuringElement(StructuringElementShape.Cross, 3)),
-                new BoundaryTrace(new StructuringElement(StructuringElementShape.Rectangle, 3)),
-                new BoundaryTrace(new StructuringElement(StructuringElementShape.Cross, 5)),
-                new BoundaryTrace(new StructuringElement(StructuringElementShape.Rectangle, 5)),
-                new BoundaryTrace(new StructuringElement(StructuringElementShape.Cross, 7)),
-                new BoundaryTrace(new StructuringElement(StructuringElementShape.Rectangle, 7)),
-                new BoundaryTrace(new StructuringElement(StructuringElementShape.Cross, 9)),
-                new BoundaryTrace(new StructuringElement(StructuringElementShape.Rectangle, 9)),
+                new Mask(new NotchFilter(63,191)),
+                new Dilate(s_c_5),
+                new BoundaryTrace(s_c_3),
+                new BoundaryTrace(s_r_3),
+                new BoundaryTrace(s_c_5),
+                new BoundaryTrace(s_r_5),
+                new BoundaryTrace(s_c_7),
+                new BoundaryTrace(s_r_7),
+                new BoundaryTrace(s_c_9),
+                new BoundaryTrace(s_r_9),
+                new OpenClose(s_c_3),
+                new OpenClose(s_r_3),
+                new OpenClose(s_c_5),
+                new OpenClose(s_r_5),
+                new OpenClose(s_c_7),
+                new OpenClose(s_r_7),
+                new OpenClose(s_c_9),
+                new OpenClose(s_r_9),
+                new CloseOpen(s_c_3),
+                new CloseOpen(s_r_3),
+                new CloseOpen(s_c_5),
+                new CloseOpen(s_r_5),
+                new CloseOpen(s_c_7),
+                new CloseOpen(s_r_7),
+                new CloseOpen(s_c_9),
+                new CloseOpen(s_r_9),
             };
 
             Application.EnableVisualStyles();
