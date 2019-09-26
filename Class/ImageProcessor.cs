@@ -67,7 +67,7 @@ namespace INFOIBV.Class
                 }
             }
         }
-        public Bitmap GetBitmap()
+        public virtual Bitmap GetBitmap()
         {
             var b = new Bitmap(Width, Height);
             for (int x = 0; x < Width; x++)
