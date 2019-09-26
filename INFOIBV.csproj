@@ -50,6 +50,7 @@
     <Compile Include="Class\BinaryProcessor.cs" />
     <Compile Include="Class\Filter.cs" />
     <Compile Include="Class\Histogram.cs" />
+    <Compile Include="Class\ImageProcessor.MaskLayer.cs" />
     <Compile Include="Class\ImageProcessor.Threshold.cs" />
     <Compile Include="Class\ImageProcessor.MorphologicalFilters.cs" />
     <Compile Include="Class\ImageProcessor.Complement.cs" />
