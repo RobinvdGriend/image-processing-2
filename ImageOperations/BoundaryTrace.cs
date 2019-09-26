@@ -28,7 +28,7 @@ namespace INFOIBV.ImageOperations
 
         public override string ToString()
         {
-            return $"Boundary trace {_se.Shape} {_se.Size} ";
+            return $"Boundary trace {_se.ToString()} ";
         }
     }
 }

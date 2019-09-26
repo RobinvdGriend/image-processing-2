@@ -12,19 +12,24 @@ namespace INFOIBV.ImageOperations
 {
     class Dilate : IImageOperation
     {
+
+        StructuringElement structure;
+        public Dilate(StructuringElement s ) {
+            structure = s;
+        }
         public Bitmap Process(Bitmap input, ProgressBar progressBar)
         {
             progressBar.Visible = false;
             
             var proc = new ImageProcessor(input);
-            proc.Dilate(new StructuringElement(StructuringElementShape.Cross, 5));
+            proc.Dilate(structure);
 
             return proc.GetBitmap();
         }
 
         public override string ToString()
         {
-            return "Dilate";
+            return $"Dilate {structure.ToString()}";
         }
     }
 

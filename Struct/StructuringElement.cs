@@ -108,5 +108,9 @@ namespace INFOIBV.Struct
             }
             return;
         }
+        public override string ToString()
+        {
+            return $"{Shape} {Size}";
+        }
     }
 }
