@@ -68,7 +68,7 @@ namespace INFOIBV.Struct
                 {
                     for (int y = 0; y < Size; y++)
                     {
-                        output[x, y] = this[Size - x, Size - y];
+                        output[x, y] = this[Size - x - 1, Size - y - 1];
                     }
                 }
                 return output;

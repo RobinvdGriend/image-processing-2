@@ -2,10 +2,10 @@
 
 Use the provided framework and add the following functionality:
 
-- [ ] **Structuring element**: implement a function that takes as input the structure element shape (+ or rectangle) and size and outputs the corresponding structure element. (5 points)
+- [x] **Structuring element**: implement a function that takes as input the structure element shape (+ or rectangle) and size and outputs the corresponding structure element. (5 points)
 
-- [ ] **Erosion/dilation**: implement two functions that take a grayscale image and a structuring element as input and output the eroded/dilated image, respectively. Your functions should also work for binary images. Perform all necessary checks. (10 points)
-- [ ] **Opening/closing**: implement two functions that take a grayscale image and a structuring element as input and output the image after morphological opening and closing, respectively. Your functions should also work for binary images. Perform all necessary checks. (5 points)
+- [x] **Erosion/dilation**: implement two functions that take a grayscale image and a structuring element as input and output the eroded/dilated image, respectively. Your functions should also work for binary images. Perform all necessary checks. (10 points)
+- [x] **Opening/closing**: implement two functions that take a grayscale image and a structuring element as input and output the image after morphological opening and closing, respectively. Your functions should also work for binary images. Perform all necessary checks. (5 points)
 - [ ] **Complement**: implement a function that takes a grayscale image as input and outputs the complement of the image. For binary images, white should become black and vice versa. (5 points)
 - [ ] **AND/OR**: implement two functions that take two binary images as input and output the pixel-wise AND and OR of both images, respectively. Check the input arguments. (5 points)
 - [ ] **Value counting**: implement a function that takes a grayscale image as input and outputs (1) the number of distinct values and (2) a histogram how often each value occurs. (10 points

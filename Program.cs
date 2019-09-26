@@ -19,6 +19,9 @@ namespace INFOIBV
             {
                 new Complement(),
                 new Dilate(),
+                new Erode(),
+                new Open(),
+                new Close(),
             };
 
             Application.EnableVisualStyles();
