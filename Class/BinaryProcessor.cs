@@ -6,7 +6,7 @@ using System.Drawing;
 
 namespace INFOIBV.Class
 {
-    partial class BinaryProcessor : ImageProcessor
+    public partial class BinaryProcessor : ImageProcessor
     {
         // A BinaryProcessor is an ImageProcessor that holds a binary image
         // and has additional methods that are only defined on binary-valued
