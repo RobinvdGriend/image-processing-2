@@ -28,7 +28,7 @@ namespace INFOIBV.ImageOperations
 
         public override string ToString()
         {
-            return "Open";
+            return "Open " + _structure.ToString();
         }
     }
 
