@@ -6,7 +6,7 @@ using System.Text;
 
 namespace INFOIBV.Class
 {
-    class Histogram
+    public class Histogram
     {
         public int[] Values {get;private set;}
         public int UniqueValueCount { get; private set; }

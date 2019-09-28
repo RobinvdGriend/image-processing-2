@@ -6,13 +6,15 @@ using System.Drawing;
 
 namespace INFOIBV.Class
 {
-    partial class BinaryProcessor : ImageProcessor
+    public partial class BinaryProcessor : ImageProcessor
     {
         // A BinaryProcessor is an ImageProcessor that holds a binary image
         // and has additional methods that are only defined on binary-valued
-        // images. A binary image is an image that only holds values 0 and 255.
-        // Calling BinaryProcessor(Bitmap) will convert any greyscale image to
-        // binary, but will only make sense if the only 2 pixel values are 0 and 255.
+        // images. A binary image interprets 0 as 0 and all other values a 1.
+        // Calling BinaryProcessor(Bitmap) will only make sense if there are
+        // only 2 colors, one of which has pixel value 0. Calling GetBitmap
+        // will actively convert all colors to 0 and 255 according to their
+        // boolean value.
         public BinaryProcessor(int width, int height) : base(width, height) { }
         public BinaryProcessor(Bitmap bitmap) : base(bitmap.Width,bitmap.Height)
         {
@@ -24,6 +26,28 @@ namespace INFOIBV.Class
                 }
             }
         }
+
+        public override Bitmap GetBitmap()
+        {
+            var b = new Bitmap(Width, Height);
+            for (int x = 0; x < Width; x++)
+            {
+                for (int y = 0; y < Height; y++)
+                {
+                    if (Image[x, y] == 0)
+                    {
+                        b.SetPixel(x, y, Color.FromArgb(0, 0, 0));
+                    }
+                    else
+                    {
+                        b.SetPixel(x, y, Color.FromArgb(0, 0, 0));
+                    }
+
+                }
+            }
+            return b;
+        }
+
         public override object Clone()
         {
             var res = new BinaryProcessor(Width, Height);

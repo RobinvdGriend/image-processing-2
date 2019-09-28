@@ -6,12 +6,12 @@ using System.Drawing;
 
 namespace INFOIBV.Struct
 {
-    enum StructuringElementShape
+    public enum StructuringElementShape
     {
         Cross,
         Rectangle
     }
-    struct StructuringElement
+    public struct StructuringElement
     {
         public int[,] Kernel;
         public int Size;
@@ -74,7 +74,7 @@ namespace INFOIBV.Struct
                 {
                     for (int y = 0; y < Size; y++)
                     {
-                        output[x, y] = this[Size - x -1, Size - y -1];
+                        output[x, y] = this[Size - x - 1, Size - y - 1];
                     }
                 }
                 return output;

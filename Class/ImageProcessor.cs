@@ -7,7 +7,7 @@ using INFOIBV.Struct;
 
 namespace INFOIBV.Class
 {
-    partial class ImageProcessor : ICloneable
+    public partial class ImageProcessor : ICloneable
     {
         // An ImageProcessor holds the image to proces in a 2 dimensional array of greyscale pixel values 
         // lying in the interval [0,255]. It provides constructor methods to create an ImageProcessor from a
@@ -70,7 +70,7 @@ namespace INFOIBV.Class
                 }
             }
         }
-        public Bitmap GetBitmap()
+        public virtual Bitmap GetBitmap()
         {
             var b = new Bitmap(Width, Height);
             for (int x = 0; x < Width; x++)

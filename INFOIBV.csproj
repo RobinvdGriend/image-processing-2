@@ -64,6 +64,9 @@
     </Compile>
     <Compile Include="Class\ImageProcessor.cs" />
     <Compile Include="Class\IImageOperation.cs" />
+    <Compile Include="ImageOperations\Close.cs" />
+    <Compile Include="ImageOperations\Open.cs" />
+    <Compile Include="ImageOperations\Erode.cs" />
     <Compile Include="ImageOperations\BandFilter.cs" />
     <Compile Include="ImageOperations\CloseOpen.cs" />
     <Compile Include="ImageOperations\Mask.cs" />
