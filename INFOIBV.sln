@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.29230.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INFOIBV", "INFOIBV.csproj", "{6125952D-9D1A-4F8F-90C5-879CF59740B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateProjectImages", "..\CreateProjectImages\CreateProjectImages.csproj", "{3FE293EC-55F2-496A-B7C5-43216978ED77}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
