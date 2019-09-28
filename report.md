@@ -48,4 +48,4 @@ $$
 y(x) = d - c x^2		&&  x,c>=0
 \end{align*}
 $$
-This can be explained due to 
+This can be explained due to the way the morphological filter works.  It takes the minimum/ maximum in the given area, defined by the kernel size. For a given pixel that has a local minimum/ maximum this value will propagate to all adjacent pixels within the kernel size $x$, this will effect $x^2$ pixels.
