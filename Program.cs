@@ -24,6 +24,7 @@ namespace INFOIBV
             var s_r_7 = new StructuringElement(StructuringElementShape.Rectangle, 7);
             var s_c_9 = new StructuringElement(StructuringElementShape.Cross, 9);
             var s_r_9 = new StructuringElement(StructuringElementShape.Rectangle, 9);
+            var s_r_11 = new StructuringElement(StructuringElementShape.Rectangle, 11);
             var ops = new IImageOperation[]
             {
                 new Complement(),
@@ -35,7 +36,11 @@ namespace INFOIBV
                 new BandFilter(181,201),
                 new NotchFilter(181,201),
                 new Mask(new NotchFilter(63,191)),
-                new Dilate(s_c_5),
+                new Dilate(s_r_3),
+                new Dilate(s_r_5),
+                new Dilate(s_r_7),
+                new Dilate(s_r_9),
+                new Dilate(s_r_11),
                 new BoundaryTrace(s_c_3),
                 new BoundaryTrace(s_r_3),
                 new BoundaryTrace(s_c_5),

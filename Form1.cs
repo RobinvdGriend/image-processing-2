@@ -29,7 +29,7 @@ namespace INFOIBV
                 InputImage = new Bitmap(file);                              // Create new Bitmap from file
 
                 if (InputImage.Size.Height <= 0 || InputImage.Size.Width <= 0 ||
-                    InputImage.Size.Height > 512 || InputImage.Size.Width > 512) // Dimension check
+                    InputImage.Size.Height > 1048 || InputImage.Size.Width > 1048) // Dimension check
                     MessageBox.Show("Error in image dimensions (have to be > 0 and <= 512)");
                 else {
                     var h = new Histogram(InputImage);
