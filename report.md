@@ -3,8 +3,12 @@
 ## Choices Made
 
 - In the case of a binary image, a pixel with value 0 is 'off', all the other pixels [1-255] are 'on'. When performing an operation that returns a binary image (instead of a greyscale image) the values 0 and 255 will strictly be used (and no values in between).
+
 - In the case of the structuring elements two shapes are implemented (+ and ▮/ 4- and 8 neighbourhood). Here the value of 0 for a given location in the bounding box of the shape signifies that this value will not be included in the operation.
-- The boundary trace function is implemented using the Moore tracing function. First the 'first pixel' is found by scanning the image, starting from the top left corner in a row first manner. After the first pixel is found the boundary is traced by looking in the 8-neighborhood for adjacent pixels. The stopping criterion is encountering the first pixel, not the first pixel in combination with the direction. Therefore some complex shapes are not traced correctly. This function also only draws the first encountered shape and does not include enclosed shapes
+
+- The boundary trace function is implemented using the Moore tracing function. First the 'first pixel' is found by scanning the image, starting from the top left corner in a row first manner. After the first pixel is found the boundary is traced by looking in the 8-neighborhood for adjacent pixels. The stopping criterion is encountering the first pixel, not the first pixel in combination with the direction. Therefore some complex shapes are not traced correctly. This function also only draws the first encountered shape and does not include enclosed shapes. This first encountered shape is than drawn as a bitmap and also written to the output window (View->Output / Ctrl + Alt + O).
+
+  
 
 
 
