@@ -12,12 +12,16 @@ namespace INFOIBV.ImageOperations
 {
     class Open : IImageOperation
     {
+        private readonly StructuringElement _structure;
+        public Open(StructuringElement structure) {
+            this._structure = structure;
+        }
         public Bitmap Process(Bitmap input, ProgressBar progressBar)
         {
             progressBar.Visible = false;
             
             var proc = new ImageProcessor(input);
-            proc.Open(new StructuringElement(StructuringElementShape.Cross, 3));
+            proc.Open(_structure);
 
             return proc.GetBitmap();
         }
