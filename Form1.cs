@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace INFOIBV
@@ -44,15 +45,22 @@ namespace INFOIBV
         {
             if (InputImage == null) return;                                 // Get out if no input image
             if (OutputImage != null) OutputImage.Dispose();                 // Reset output image
-
+            pictureBox2.Image = null;
+            histogram2.Image = null;
+            this.Refresh();
 
             var op = (IImageOperation)chooseProcessor.SelectedItem;
-            OutputImage = op.Process(InputImage, progressBar);
+            var t = new Thread(() =>
+            {
+                OutputImage = op.Process(InputImage, progressBar);
+                var h = new Histogram(OutputImage);
+                pictureBox2.Image = (Image)OutputImage;                         // Display output image
+                histogram2.Image = (Image)h.RenderHistogram(2);
+                progressBar.Visible = false;                                    // Hide progress bar
+            });
+            t.Start();
 
-            var h = new Histogram(OutputImage);
-            pictureBox2.Image = (Image)OutputImage;                         // Display output image
-            histogram2.Image = (Image)h.RenderHistogram(2);
-            progressBar.Visible = false;                                    // Hide progress bar
+
         }
 
         private void saveButton_Click(object sender, EventArgs e)
