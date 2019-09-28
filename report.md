@@ -21,7 +21,7 @@
 | **Structuring element size** | N.A  | 3    | 5    | 7    | 9    | 11   |
 | **# of values**              | 255  | 250  | 248  | 246  | 244  | 244  |
 
->  Table: Number of distinct pixel values of image before and after dilations with structuring element with square shape and increasing size.
+>  Table A: Number of distinct pixel values of image before and after dilations with structuring element with square shape and increasing size.
 
 After applying a dilation, we see a decrease in distinct pixel values in the image. Greyscale dilation is defined on an image $I$ and structuring element $H$ as follows:
 $$
@@ -31,4 +31,21 @@ Since this maximum value can be the same in two neighbouring subimages of $I$, t
 
 ![1569674635664](C:\Users\sam\OneDrive\WorkFiles\Vakken\IBV\Practicals\Assignment 2\assets\1569674635664.png)
 
-> Image: Log Histogram of image E5, a loss of lower intensity values and overexposure are evident.
+> Image A: Log Histogram of image E5, a loss of lower intensity values and overexposure are evident.
+
+## Images G1...Gn
+
+|                        | **Original** | **G1** | **G2** | **G3** | **G4** | **G5** |
+| ---------------------- | ------------ | ------ | ------ | ------ | ------ | ------ |
+| **Kernel size**        | N.A          | 3      | 23     | 43     | 63     | 83     |
+| **unique pixel count** | 255          | 254    | 253    | 246    | 206    | 47     |
+
+> Table B:  Number of non-background values of image before and after dilations with structuring element with square shape and increasing size.
+
+When plotting the results which are displayed in the table above you can see it takes the form of the following function:
+$$
+\begin{align*} 
+y(x) = d - c x^2		&&  x,c>=0
+\end{align*}
+$$
+This can be explained due to 
