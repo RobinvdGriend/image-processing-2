@@ -17,7 +17,7 @@ namespace INFOIBV.Class
 
         public int Width;
         public int Height;
-        protected int[,] Image { get; set; }         // x,y
+        public int[,] Image { get; protected set; }         // x,y
         public Histogram CalculateHistogram() {
             return new Histogram(Image);
         }
