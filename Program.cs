@@ -16,6 +16,12 @@ namespace INFOIBV
         [STAThread]
         static void Main()
         {
+            var g1 = new StructuringElement(StructuringElementShape.Rectangle, 3); 
+            var g2 = new StructuringElement(StructuringElementShape.Rectangle, 23); 
+            var g3 = new StructuringElement(StructuringElementShape.Rectangle, 43); 
+            var g4 = new StructuringElement(StructuringElementShape.Rectangle, 63); 
+            var g5 = new StructuringElement(StructuringElementShape.Rectangle, 83); 
+
             var s_c_3 = new StructuringElement(StructuringElementShape.Cross, 3);
             var s_r_3 = new StructuringElement(StructuringElementShape.Rectangle, 3);
             var s_c_5 = new StructuringElement(StructuringElementShape.Cross, 5);
@@ -41,6 +47,11 @@ namespace INFOIBV
                 new Dilate(s_r_7),
                 new Dilate(s_r_9),
                 new Dilate(s_r_11),
+                new Open(g1),
+                new Open(g2),
+                new Open(g3),
+                new Open(g4),
+                new Open(g5),
                 new BoundaryTrace(s_c_3),
                 new BoundaryTrace(s_r_3),
                 new BoundaryTrace(s_c_5),
