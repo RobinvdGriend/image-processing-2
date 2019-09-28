@@ -40,7 +40,7 @@ namespace INFOIBV.Class
                     }
                     else
                     {
-                        b.SetPixel(x, y, Color.FromArgb(0, 0, 0));
+                        b.SetPixel(x, y, Color.FromArgb(255, 255, 255));
                     }
 
                 }
