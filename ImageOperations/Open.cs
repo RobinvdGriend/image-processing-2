@@ -22,7 +22,8 @@ namespace INFOIBV.ImageOperations
             
             var proc = new ImageProcessor(input);
             proc.Open(_structure);
-
+            var h = proc.CalculateHistogram();
+            System.Diagnostics.Trace.WriteLine($"Unique values: {h.UniqueValueCount}");
             return proc.GetBitmap();
         }
 
