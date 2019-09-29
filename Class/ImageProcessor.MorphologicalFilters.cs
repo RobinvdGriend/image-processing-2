@@ -9,7 +9,7 @@ namespace INFOIBV.Class
 {
     partial class ImageProcessor
     {
-        public void Dilate(StructuringElement structure)
+        public virtual void Dilate(StructuringElement structure)
         {
             // We assume that the hotspot of the structuring element is in
             // the middle.

@@ -65,6 +65,9 @@ namespace INFOIBV
                 new CloseOpen(s_r_7),
                 new CloseOpen(s_c_9),
                 new CloseOpen(s_r_9),
+                new ImageX(),
+                new ImageY(),
+                new ImageZ(),
             };
 
             Application.EnableVisualStyles();
