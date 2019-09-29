@@ -54,7 +54,7 @@ namespace INFOIBV.Class
             {
                 return Image[x, y];
             }
-            private set
+            protected set
             {
                 if (x < 0 | y < 0 | x >= Width | y >= Width)
                 {
